@@ -33,11 +33,6 @@ source_bashrc()
 	done
 	if [ "$GREENPLUM_PATH" == "" ]; then
 		get_version
-		if [[ "$VERSION" == *"gpdb"* ]]; then
-			echo "$startup_file does not contain greenplum_path.sh"
-			echo "Please update your $startup_file for $ADMIN_USER and try again."
-			exit 1
-		fi
 	fi
 	echo "source ~/$startup_file"
 	# don't fail if an error is happening in the admin's profile
