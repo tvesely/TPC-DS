@@ -43,11 +43,6 @@ source_bashrc()
 	count=$(grep -v "^#" ~/.bashrc | grep "greenplum_path" | wc -l)
 	if [ "$count" -eq "0" ]; then
 		get_version
-		if [[ "$VERSION" == *"gpdb"* ]]; then
-			echo "$startup_file does not contain greenplum_path.sh"
-			echo "Please update your $startup_file for $ADMIN_USER and try again."
-			exit 1
-		fi
 	fi
 }
 get_version()
